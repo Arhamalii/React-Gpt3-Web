@@ -1,4 +1,4 @@
-import { Card, CardContent, CardMedia, Typography } from "@mui/material";
+import { Card, CardContent, CardMedia, Stack, Typography } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -16,7 +16,13 @@ const VideoCard = ({
   },
 }) => {
   return (
-    <Card sx={{ width: { md: "320px", xs: "100%" } }}>
+    <Card
+      sx={{
+        width: { md: "320px", xs: "100%" },
+        boxShadow: "none",
+        borderRadius: "0",
+      }}
+    >
       <Link to={videoId ? `/video/${videoId}` : demoVideoUrl}>
         <CardMedia
           image={snippet?.thumbnails?.high?.url}
@@ -38,22 +44,20 @@ const VideoCard = ({
               : demoChannelUrl
           }
         >
-          <Typography
-            variant="subtitle2"
-            fontWeight="bold"
-            color="gray"
-            height={"200px"}
-          >
-            {snippet?.channelTitle || demoChannelTitle}
-            <CheckCircle
-              sx={{
-                fontSize: 10,
-                color: "gary",
-                ml: "5px",
-                verticalAlign: "middle",
-              }}
-            />
-          </Typography>
+          <Stack direction={"row"} alignItems={"center"}>
+            <Typography variant="subtitle2" fontWeight="bold" color="gray">
+              {snippet?.channelTitle || demoChannelTitle}
+              <CheckCircle
+                sx={{
+                  fontSize: 12,
+                  color: "gary",
+                  ml: "5px",
+                  verticalAlign: "middle",
+                  mb: ".142rem",
+                }}
+              />
+            </Typography>
+          </Stack>
         </Link>
       </CardContent>
     </Card>
