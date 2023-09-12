@@ -2,34 +2,43 @@ import { Box } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchFromAPI } from "../utils/fetchFromApi";
+import ChannelCard from "./ChannelCard";
+
+import Video from "./Video";
 const ChannelDetail = () => {
   const [channelDetail, setChannelDetail] = useState(null);
   const [videos, setVideos] = useState([]);
 
   const { id } = useParams();
   useEffect(() => {
-    fetchFromAPI(`channels?part=snippet&id=${id}`).then(
-      (data) => {
-        setChannelDetail(data?.items[0]);
-      }
+    fetchFromAPI(`channels?part=snippet&id=${id}`).then((data) => {
+      setChannelDetail(data?.items[0]);
+      console.log(data?.items[0]);
+    });
 
-      // fetchFromAPI(`search?channelId=${id}&part=snippet&order=data`).then(
-      //   (data) => {
-      //     setVideos(data?.items);
-      //   }
+    fetchFromAPI(`search?channelId=${id}&part=snippet&order=date`).then(
+      (data) => {
+        setVideos(data?.items);
+      }
     );
   }, []);
   return (
     <Box minHeight="95vh">
       <Box>
         <div
+          className="gradient"
           style={{
-            background:
-              "background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);",
-            zIndex: 10,
             height: "300px",
+            width: "100%",
           }}
         ></div>
+
+        <ChannelCard channelDetail={channelDetail} marginTop={"-94px"} />
+      </Box>
+      <Box display={"flex"} p={2}>
+        <Box sx={{ mt: { sm: "100px" } }}>
+          <Video videos={videos} align={"center"} />
+        </Box>
       </Box>
     </Box>
   );
