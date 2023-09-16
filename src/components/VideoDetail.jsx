@@ -30,7 +30,7 @@ const VideoDetail = () => {
               controls
               url={`https://www.youtube.com/watch?v=${id}`}
             />
-            <Typography variant="h2">{title}</Typography>
+            <Typography variant="h6">{title}</Typography>
           </Box>
         </Box>
       </Stack>
