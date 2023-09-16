@@ -17,9 +17,11 @@ const Feed = () => {
     <Stack sx={{ flexDirection: { sx: "column", md: "row" } }}>
       <Box
         sx={{
-          height: { sx: "auto", md: "92vh" },
+          height: { sx: "auto", md: "89.6vh" },
           borderRight: "1px solid #3d3d3d",
-          px: { sx: "0", md: "2" },
+          position: "sticky",
+          top: { sx: "0", md: "77.6px" },
+          px: { sx: 0, md: 0.4 },
         }}
       >
         <SideBar
@@ -29,13 +31,23 @@ const Feed = () => {
         <Typography
           className="copyright"
           variant="body2"
-          sx={{ mt: 1.5, color: "#fff" }}
+          sx={{
+            mt: 1.5,
+            color: "#fff",
+            width: { sx: "auto", md: "max-content" },
+            px: { sx: 0, md: 0.1 },
+          }}
         >
-          CopyRight &copy;2022 AA Tube
+          CopyRight &copy;2022 Tube
         </Typography>
       </Box>
 
-      <Box px={2}>
+      <Box
+        px={2}
+        sx={{
+          minWidth: "80vw",
+        }}
+      >
         <Typography
           variant="h4"
           fontWeight={"bold"}
