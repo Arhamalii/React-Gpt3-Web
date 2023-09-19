@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import ReactPlayer from "react-player";
 import { Link, useParams } from "react-router-dom";
 import { fetchFromAPI } from "../utils/fetchFromApi";
-import Video from "./Video";
+import { Video } from "./";
 
 const VideoDetail = () => {
   const [videoDetail, setVideoDetail] = useState(null);
@@ -19,13 +19,15 @@ const VideoDetail = () => {
       ).then((data) => setVideos(data.items))
     );
   }, [id]);
+
   if (!videoDetail?.snippet) return "Loading...";
   const {
     snippet: { title, channelId, channelTitle },
     statistics: { viewCount, likeCount },
   } = videoDetail;
+
   return (
-    <Box minHeight={"85vh"} className="box">
+    <Box height={"100%"} className="box">
       <Stack
         direction={{ xs: "column", md: "row" }}
         justifyContent={"space-around"}
@@ -43,8 +45,9 @@ const VideoDetail = () => {
             <Stack
               direction={"row"}
               justifyContent={"space-between"}
+              alignItems={"center"}
               sx={{ color: "#fff" }}
-              pb={1}
+              // p={1}
               px={2}
             >
               <Link to={`/channel/${channelId}`}>
@@ -54,7 +57,13 @@ const VideoDetail = () => {
                 >
                   {channelTitle}
                   <CheckCircle
-                    sx={{ fontSize: "14px", color: "gray", ml: "5px" }}
+                    sx={{
+                      fontSize: "12px",
+                      color: "gray",
+                      ml: "5px",
+                      verticalAlign: "middle",
+                      mb: ".18rem",
+                    }}
                   />
                 </Typography>
               </Link>

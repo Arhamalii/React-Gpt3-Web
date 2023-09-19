@@ -14,7 +14,7 @@ const Feed = () => {
   }, [selectedCategory]);
 
   return (
-    <Stack sx={{ flexDirection: { sx: "column", md: "row" } }}>
+    <Stack sx={{ flexDirection: { xs: "column", md: "row" } }}>
       <Box
         sx={{
           height: { sx: "auto", md: "89.6vh" },
@@ -36,6 +36,7 @@ const Feed = () => {
             color: "#fff",
             width: { sx: "auto", md: "max-content" },
             px: { sx: 0, md: 0.1 },
+            display: { xs: "none", md: "block" },
           }}
         >
           CopyRight &copy;2022 Tube
@@ -43,7 +44,7 @@ const Feed = () => {
       </Box>
 
       <Box
-        px={2}
+        px={{ xs: 1, sm: 2 }}
         sx={{
           minWidth: "80vw",
         }}

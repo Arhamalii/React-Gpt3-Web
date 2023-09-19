@@ -12,7 +12,7 @@ const ChannelCard = ({ channelDetail, marginTop }) => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        width: { xs: "356px", md: "320px" },
+        width: { xs: "330px", sm: "300px", md: "320px" },
         height: "326px",
         margin: "auto",
         marginTop,
@@ -43,7 +43,7 @@ const ChannelCard = ({ channelDetail, marginTop }) => {
             }}
           />
 
-          <Typography variant="h6" color="#fff">
+          <Typography variant="h6" color="#fff" textAlign={"center"}>
             {channelDetail?.snippet?.title}
             <CheckCircle
               sx={{

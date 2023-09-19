@@ -8,7 +8,7 @@ const Video = ({ videos, align, direction }) => {
     <Stack
       direction={direction || "row"}
       flexWrap={"wrap"}
-      justifyContent={align ? align : "start"}
+      justifyContent={align ? align : { xs: "center", md: "start" }}
       gap={2}
     >
       {videos.map((items, idx) =>
