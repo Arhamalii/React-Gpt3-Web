@@ -20,6 +20,7 @@ const ChannelDetail = () => {
         setVideos(data?.items);
       }
     );
+    // eslint-disable-next-line
   }, []);
   return (
     <Box minHeight="95vh">

@@ -34,7 +34,7 @@ a {
 }
 
 .react-player {
-  height: 77vh !important;
+  height: 75vh !important;
   width: 100% !important;
 }
 
@@ -72,6 +72,9 @@ a {
 @media screen and (max-width: 900px) {
   .category-btn {
     margin: 10px;
+  }
+  #long-btn {
+    min-width: 140px;
   }
 }
 

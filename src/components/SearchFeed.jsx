@@ -14,16 +14,8 @@ const SearchFeed = () => {
   }, [searchTerm]);
 
   return (
-    <Box px={2}>
-      <Typography
-        variant={"h4"}
-        fontWeight={"bold"}
-        mb={4}
-        sx={{
-          color: "white",
-          fontSize: { xs: "1.1rem", sm: "1.5rem", md: "2.2rem" },
-        }}
-      >
+    <Box>
+      <Typography variant={"h4"} className="feed-title">
         Search Result For :
         <span style={{ color: "#f31503" }}> {searchTerm} </span>
       </Typography>

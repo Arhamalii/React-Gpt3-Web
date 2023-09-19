@@ -39,7 +39,13 @@ const VideoDetail = () => {
               controls
               url={`https://www.youtube.com/watch?v=${id}`}
             />
-            <Typography variant="h5" color={"#fff"} fontWeight="bold" p={2}>
+            <Typography
+              variant="h5"
+              color={"#fff"}
+              fontWeight="bold"
+              p={2}
+              fontSize={{ xs: "1rem", sm: "24px" }}
+            >
               {title}
             </Typography>
             <Stack
@@ -54,25 +60,34 @@ const VideoDetail = () => {
                 <Typography
                   variant={{ sm: "subtitle1", md: "h6" }}
                   color="#fff"
+                  fontSize={{ xs: ".8rem", sm: "1rem" }}
                 >
                   {channelTitle}
                   <CheckCircle
                     sx={{
-                      fontSize: "12px",
+                      fontSize: { xs: "11px", sm: "12px" },
                       color: "gray",
                       ml: "5px",
                       verticalAlign: "middle",
-                      mb: ".18rem",
+                      mb: { xs: ".07rem", sm: ".18rem" },
                     }}
                   />
                 </Typography>
               </Link>
 
               <Stack direction={"row"} gap={"20px"} alignItems={"center"}>
-                <Typography variant="body1" sx={{ opacity: ".7" }}>
+                <Typography
+                  variant="body1"
+                  sx={{ opacity: ".7" }}
+                  fontSize={{ xs: ".8rem", sm: "1rem" }}
+                >
                   {parseInt(viewCount).toLocaleString()} views
                 </Typography>
-                <Typography variant="body1" sx={{ opacity: ".7" }}>
+                <Typography
+                  variant="body1"
+                  sx={{ opacity: ".7" }}
+                  fontSize={{ xs: ".8rem", sm: "1rem" }}
+                >
                   {parseInt(likeCount).toLocaleString()} likes
                 </Typography>
               </Stack>
@@ -82,11 +97,11 @@ const VideoDetail = () => {
         <Box
           px={2}
           py={{ md: 1, xs: 5 }}
+          display={"flex"}
           justifyContent={"center"}
           alignItems={"center"}
-          direction
         >
-          <Video videos={videos} direction={"column"} />
+          <Video videos={videos} direction={{ xs: "row", md: "column" }} />
         </Box>
       </Stack>
     </Box>

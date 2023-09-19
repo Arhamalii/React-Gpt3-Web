@@ -51,7 +51,6 @@ const ChannelCard = ({ channelDetail, marginTop }) => {
                 color: "gray",
                 ml: "5px",
                 verticalAlign: "middle",
-                color: "gray",
               }}
             />
           </Typography>
